@@ -7,8 +7,8 @@ int main(void){
 	scanf("%d %d",&a,&b);
 	
 	d=(d=='o');
-	if (a%2==0 && d) a+=1;
-	if (b%2==0 && d) b-=1;
+	if ((a&1) ^ d) a+=1;
+	if ((b&1) ^ d) b-=1;
 	for (; a<=b; a+=2){ printf("%d ",a);}
 	puts("");
 	return 0;
