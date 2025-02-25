@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include "mylib.h"
 //#include<time.h>
 int main(void){
 	int a,b;char d;
@@ -7,13 +8,13 @@ int main(void){
 	puts("range in the form : start stop");
 	scanf("%d %d",&a,&b);
 	
-	//clock_t e=clock();
+//	clock_t e=clock();
 	d=(d=='o');
-	if ((a%1) ^ d) a+=1;
-	if ((b%1) ^ d) b-=1;
-	for (; a<=b; a+=2){ printf("%d ",a);}
+	if ((a&1) ^ d) a+=1;
+	if ((b&1) ^ d) b-=1;
+	for (; a<=b; a+=2){ char * f=int2str(a);puts(f);free(f);}
 	puts("");
-	//e=clock()-e;double c=((double)e)/CLOCKS_PER_SEC;
-	//printf("%f\n",c);
+//	e=clock()-e;double c=((double)e)/CLOCKS_PER_SEC;
+//	printf("%f\n",c);
 	return 0;
 }
