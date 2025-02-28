@@ -22,7 +22,7 @@ int main(void){
 		h[k]='\n';
 		while (j!=0){ k-=1;r=j%10;j/=10; h[k]=r+48;}
 		k--;
-	} h[l]='\0';puts(h);
+	} h[l]='\0';puts(h);free(h);
 //	e=clock()-e;double c=((double)e)/CLOCKS_PER_SEC;
 //	printf("%f\n",c);
 	return 0;
