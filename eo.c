@@ -15,7 +15,7 @@ int main(void){
 	b-=((b&1) ^ d);
 	int l = b-a;
 	l+=length(a,b)+1;
-	char *h=(char *)malloc((sizeof (char) )*(l+1));
+	if (char *h=(char *)malloc((sizeof (char) )*(l+1)) == NULL) { return -1;}
 	int k=l;
 	for (; b>=a; b-=1){
 		int j=b,r;
