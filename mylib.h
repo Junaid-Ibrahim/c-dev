@@ -10,8 +10,13 @@ char * int2str(int a){
 	while (a!=0){ e+=1;a/=10;}
 	char *f=(char *)malloc((sizeof (char))*(e+1));
 	f[e]='\0';
-	while (b!=0){ e-=1;r=b%10;b/=10; f[e]=r+48;}
+	while (b!=0){ r=b%10;b/=10; f[--e]=r+48;}
 	return f;
+}
+int str2int(char* a){
+	int i=0,b=0;
+	while(a[i]!='\0'){ b=b*10+(a[i++]-48);}
+	return b;
 }
 int length(int a , int b){
 	int e=0,f=0,c=a,d=b;
