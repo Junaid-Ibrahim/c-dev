@@ -1,20 +1,11 @@
-#include<unistd.h>
 long long mypow(long long a,long long b){
 	long long i=1;
 	for(;b>=0;b--){ i*=a;}
 	return i;
 }
-char * int2str(int a){
-	int b=a,e=0,r;
-	while (a!=0){ e+=1;a/=10;}
-	char *f=(char *)sbrk((sizeof (char))*(e+1));
-	f[e]='\0';
-	while (b!=0){ r=b%10;b/=10; f[--e]=r+48;}
-	return f;
-}
 long long str2int(char* a){
 	long long i=0,b=0;
-	while(a[i]!='\0'){ b=b*10+(a[i++]-48);}
+	while(a[i]!=0){ b=b*10+(a[i++]-48);}
 	return b;
 }
 long long min(long long n){
